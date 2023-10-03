@@ -1,5 +1,36 @@
 img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    width: 4%;
+}
+
+h1{
+    display: inline-block;
+    text-align: center;
+}
+
+a{
+    margin-right: 5%;
+}
+
+body{
+    background-color: #f7ece1 ;
+}
+
+.container{
+    position: fixed;
+    Height: 70;
+    width: 100%;
+    margin: auto;
+    background-color: #8D86C9 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* x axis */
+    align-items: center; /* y axis */
+}
+
+.nav-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* x axis */
+    align-items: center; /* y axis */
 }
