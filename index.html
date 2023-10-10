@@ -9,16 +9,104 @@
     <title>Bador R Al-Sharif</title>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <img src="./img/Bador Rakkan.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h2>Hi, I'm Bador R. Al-Sharif</h2>
+            </div>
+        </div>
     </div>
+    <!------------------------ About ------------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./img/10212371-139547554_104-s5-v1.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="about-title">About me</h1>
+                    <p>
+                        An energetic and creative fresh graduate of Computer Science. Eager to learn,
+                        and develop new skills, enhance practical knowledge in the technology field, and
+                        serve the community with her knowledge.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('Education')">Education</p>
+                        <p class="tab-links" onclick="openTab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('Certificates')">Certificates</p>
+                    </div>
+                    <!------------------------ Education ------------------------>
+                    <div class="tab-contents active-tab" id="Education">
+                        <ul>
+                            <li>
+                                <span class="tab-subtitle">Bachelor of Computer Science</span><br>
+                                <span>From September 2018 to March 2023 <br></span>
+                                King AbdulAziz University | Jeddah, Saudi Arabia <br>
+                                GPA 4.56 / 5
+                            </li>
+                        </ul>
+                    </div>
+                    <!------------------------ Experience ------------------------>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li>
+                                <span class="tab-subtitle">Data analysis - Virtual Work Experience</span><br>
+                                <span>September 2023 <br></span>
+                                STC <br>
+                            </li>
+                            <li>
+                                <span class="tab-subtitle">Research And Development Intern</span><br>
+                                <span>From June 2022 to August 2022 <br></span>
+                                Classera | Jeddah, Saudi Arabia <br>
+                            </li>
+                        </ul>
+                    </div>
+                    <!------------------------ Certificates ------------------------>
+                    <div class="tab-contents" id="Certificates">
+                        <ul>
+                            <li>
+                                <span class="tab-subtitle">Software Engineering Track</span><br>
+                                <span>March 2023 <br></span>
+                                King AbdulAziz University | Jeddah, Saudi Arabia <br>
+                                <i>*Issued b y the university due to completing two advanced courses in
+                                Softwar e Engineering successfully.</i>
+                                
+                            </li>
+                            <li>
+                                <span class="tab-subtitle">CCNA: Introduction to Networks (ITN)</span><br>
+                                <span>March 2022 <br></span>
+                                Cisco Networking Academy
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tabLinks = document.getElementsByClassName('tab-links');
+        var tabContents = document.getElementsByClassName('tab-contents');
+
+        function openTab(tabName){
+            for(tabLink of tabLinks){
+                tabLink.classList.remove('active-link');
+            }
+            for(tabContent of tabContents){
+                tabContent.classList.remove('active-tab');
+            }
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabName).classList.add('active-tab');
+        }
+    </script>
 </body>
 </html>
