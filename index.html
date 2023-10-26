@@ -6,26 +6,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/23a749b538.js" crossorigin="anonymous"></script>
     <title>Bador R Al-Sharif</title>
 </head>
 <body>
     <div id="header">
         <div class="container">
             <nav>
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
             </nav>
+            <script>
+                var sidemenu = document.getElementById("sidemenu");
+                function openMenu(){
+                    sidemenu.style.right = "0";
+                }
+                function closeMenu(){
+                    sidemenu.style.right = "-200px";
+                }
+            </script>
             <div class="header-text">
                 <p>Software Engineer</p>
                 <h2>Hi, I'm Bador R. Al-Sharif</h2>
             </div>
         </div>
     </div>
-    <!------------------------ About ------------------------>
+    <!---------------------------------------------- About ---------------------------------------------->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -33,7 +45,7 @@
                     <img src="./img/10212371-139547554_104-s5-v1.png">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="about-title">About me</h1>
+                    <h1 class="sub-title">About me</h1>
                     <p>
                         An energetic and creative fresh graduate of Computer Science. Eager to learn,
                         and develop new skills, enhance practical knowledge in the technology field, and
@@ -42,16 +54,38 @@
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('Education')">Education</p>
                         <p class="tab-links" onclick="openTab('Experience')">Experience</p>
-                        <p class="tab-links" onclick="openTab('Certificates')">Certificates</p>
                     </div>
+                    <script>
+                        var tabLinks = document.getElementsByClassName('tab-links');
+                        var tabContents = document.getElementsByClassName('tab-contents');
+                
+                        function openTab(tabName){
+                            for(tabLink of tabLinks){
+                                tabLink.classList.remove('active-link');
+                            }
+                            for(tabContent of tabContents){
+                                tabContent.classList.remove('active-tab');
+                            }
+                            event.currentTarget.classList.add('active-link');
+                            document.getElementById(tabName).classList.add('active-tab');
+                        }
+                    </script>
                     <!------------------------ Education ------------------------>
                     <div class="tab-contents active-tab" id="Education">
                         <ul>
                             <li>
                                 <span class="tab-subtitle">Bachelor of Computer Science</span><br>
                                 <span>From September 2018 to March 2023 <br></span>
-                                King AbdulAziz University | Jeddah, Saudi Arabia <br>
+                                King AbdulAziz University <br>
                                 GPA 4.56 / 5
+                            </li>
+                            <li>
+                                <span class="tab-subtitle">Software Engineering Track</span><br>
+                                <span>March 2023 <br></span>
+                                King AbdulAziz University<br>
+                                <i>**Issued b y the university due to completing two advanced courses in
+                                Softwar e Engineering successfully.</i>
+                                
                             </li>
                         </ul>
                     </div>
@@ -62,29 +96,22 @@
                                 <span class="tab-subtitle">Data analysis - Virtual Work Experience</span><br>
                                 <span>September 2023 <br></span>
                                 STC <br>
+                                <ul>
+                                    <li>Study and analyze user behavior.</li>
+                                    <li>Build a model to predict user behavior.</li>
+                                    <li>Make recommendations using machine learning algorithms.</li>
+                                    <li>Storytelling of data across presentations.</li>
+                                </ul>
                             </li>
                             <li>
                                 <span class="tab-subtitle">Research And Development Intern</span><br>
                                 <span>From June 2022 to August 2022 <br></span>
-                                Classera | Jeddah, Saudi Arabia <br>
-                            </li>
-                        </ul>
-                    </div>
-                    <!------------------------ Certificates ------------------------>
-                    <div class="tab-contents" id="Certificates">
-                        <ul>
-                            <li>
-                                <span class="tab-subtitle">Software Engineering Track</span><br>
-                                <span>March 2023 <br></span>
-                                King AbdulAziz University | Jeddah, Saudi Arabia <br>
-                                <i>*Issued b y the university due to completing two advanced courses in
-                                Softwar e Engineering successfully.</i>
-                                
-                            </li>
-                            <li>
-                                <span class="tab-subtitle">CCNA: Introduction to Networks (ITN)</span><br>
-                                <span>March 2022 <br></span>
-                                Cisco Networking Academy
+                                Classera <br>
+                                <ul>
+                                    <li>Implemented a blog website using the CakePHP framework.</li>
+                                    <li>Used PHP , HTML, and MySQL to implement the website.</li>
+                                    <li>Utilized Virtual machine to implement on Linux.</li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -92,21 +119,99 @@
             </div>
         </div>
     </div>
+    <!---------------------------------------------- Portfolio ---------------------------------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="projects-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Pathway Genie</h2>
+                    <p>
+                        A web-based tool that reads gene expression data and biological pathways of these 
+                        genes to generate a comprehensive report analyzing the data and producing precise 
+                        results quickly using artificial intelligence.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <h2>Project 2</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ad voluptates molestiae 
+                        hic quas porro laborum fuga, maxime nobis sed voluptas earum natus accusantium obcaecati 
+                        eveniet repellat quisquam mollitia aliquid.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-file"></i>
+                    <h2>Project 3</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ad voluptates molestiae 
+                        hic quas porro laborum fuga, maxime nobis sed voluptas earum natus accusantium obcaecati 
+                        eveniet repellat quisquam mollitia aliquid.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-file"></i>
+                    <h2>Project 4</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ad voluptates molestiae 
+                        hic quas porro laborum fuga, maxime nobis sed voluptas earum natus accusantium obcaecati 
+                        eveniet repellat quisquam mollitia aliquid.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------------- Contact ---------------------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>Bador.Rakkan@outlook.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+966 50 026 8989</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/badorrakkan"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/badorrakkan"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://github.com/BadorRakkan"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="./img/CV_BadorAlSHARIF.pdf" download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                    <script>
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzbVXEwatTm7c7h0hVBtNjV0tEe5inO4KzRvTcgNK_Tbtdc_-ZSjnjCEFHtauFuEpF9/exec'
+                        const form = document.forms['submit-to-google-sheet']
+                        const msg = document.getElementById('msg')
+                      
+                        form.addEventListener('submit', e => {
+                          e.preventDefault()
+                          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                            .then(response => {
+                                msg.innerHTML = "Message sent successfully"
+                                setTimeout(function() {
+                                    msg.innerHTML = ""
+                                },5000)
+                                form.reset()
+                            })
+                            .catch(error => console.error('Error!', error.message))
+                        })
+                      </script>
+                </div>
 
-    <script>
-        var tabLinks = document.getElementsByClassName('tab-links');
-        var tabContents = document.getElementsByClassName('tab-contents');
-
-        function openTab(tabName){
-            for(tabLink of tabLinks){
-                tabLink.classList.remove('active-link');
-            }
-            for(tabContent of tabContents){
-                tabContent.classList.remove('active-tab');
-            }
-            event.currentTarget.classList.add('active-link');
-            document.getElementById(tabName).classList.add('active-tab');
-        }
-    </script>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
