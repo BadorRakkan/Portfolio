@@ -14,8 +14,6 @@ body{
 }
 
 #header{
-    width: 100%;
-    height: 100vh;
     background-image: url(/img/10207747-139547554_104-s5-v1.png);
     background-position: right;
     background-repeat: no-repeat;
@@ -176,4 +174,222 @@ nav ul li a:hover:after{
 
 .tab-contents.active-tab{
     display: block;
+}
+
+/* ------------------------ Projects ------------------------ */
+#portfolio{
+    padding: 80px 0;
+    color: #27473E;
+}
+
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.projects-list div{
+    background: #A1B3A7;
+    padding: 40px;
+    font-size: 13px;
+    border-radius:10px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.projects-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.projects-list div h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.projects-list div a{
+    display: inline-block;
+    text-decoration: none;
+    color: #27473E;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.projects-list div:hover{
+    color: #F9F7F0 ;
+    background: #496F5D;
+    transform: translateY(-10px);
+}
+
+/* ------------------------ Contact ------------------------ */
+#contact{
+    padding: 80px 0;
+    color: #F9F7F0;
+    background-color: #A1B3A7;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-left p i{
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #F9F7F0;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: #496F5D;
+    transform: translateY(-5px);
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    background: #496F5D;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #496F5D;
+    padding: 14px 50px;
+    border-radius: 5px;
+    color: #F9F7F0;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background-color: #F9F7F0;
+    padding: 15px;
+    margin: 15px 0;
+    color: #27473E;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn{
+    padding: 14px 60px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#msg{
+    color: #496F5D;
+    margin-top: -40px;
+    display: block;
+    font-weight: bold;
+}
+
+/* ------------------------ Small Screens ------------------------ */
+#header nav .fa-solid{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-size: 175%;
+        background-position: bottom;
+    }
+    .header-text{
+        font-size: 20px;
+    }
+    .header-text h2{
+        font-size: 40px;
+    }
+
+    #header nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+
+    #header nav ul{
+        background-color: #764E74;
+        position: fixed;
+        top: 0;
+        right: -150px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+    #header nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    #header nav ul li a{
+        color: #F9F7F0;
+    }
+
+    #header nav ul .fa-solid{
+        color: #F9F7F0;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+
+    #header nav .fa-solid{
+        color: #764E74;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+
+    nav ul li a::after{
+        background-color: #F9F7F0;
+    }
+
+    .sub-title{
+        font-size: 35px;
+    }
+
+    .about-col-1{
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-col-2{
+        flex-basis: 100%;
+        font-size: 14px;;
+    }
+
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    #about .container, #portfolio .container, #contact .container{
+        height: auto;
+    }
+
+    .contact-left , .contact-right{
+        flex-basis: 100%;
+    }
 }
