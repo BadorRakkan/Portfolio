@@ -176,9 +176,29 @@ nav ul li a:hover:after{
     display: block;
 }
 
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 30px; /* Place the button at the bottom of the page */
+    right: 40px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #623B5A; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 20px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 20px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #764E74; /* Add a dark-grey background on hover */
+  }
+
 /* ------------------------ Projects ------------------------ */
 #portfolio{
-    padding: 80px 0;
+    padding: 20px 0;
     color: #27473E;
 }
 
@@ -216,9 +236,12 @@ nav ul li a:hover:after{
 }
 
 .projects-list div:hover{
-    color: #F9F7F0 ;
+    color: #F9F7F0;
     background: #496F5D;
     transform: translateY(-10px);
+}
+.projects-list div:hover>a{
+    color: #F9F7F0;
 }
 
 /* ------------------------ Contact ------------------------ */
